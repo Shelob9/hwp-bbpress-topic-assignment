@@ -1,0 +1,25 @@
+{
+  "name": "hwp-bbpress-topic-assignment",
+  "title": "HWP bbPress Topic Assignment",
+  "description": "Allows you to easily assign bbPress topics to users, as well as the ability to mark topics resolved. Also provides an admin page for listing topics by assigned user.",
+  "version": "0.1.0",
+  "homepage": "http://wordpress.org/plugins",
+  "author": {
+    "name": "Josh Pollock",
+    "email": "Josh@JoshPress.net"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "~0.1.2",
+    "grunt-contrib-uglify": "~0.1.1",
+    "grunt-contrib-cssmin": "~0.6.0",
+    "grunt-contrib-jshint": "~0.1.1",
+    "grunt-contrib-nodeunit": "~0.1.2",
+    "grunt-contrib-watch": "~0.2.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-compress": "~0.5.2",
+    "grunt-contrib-sass": "~0.2.2"
+  },
+  "keywords": []
+}
