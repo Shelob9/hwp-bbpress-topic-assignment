@@ -84,3 +84,5 @@ function hwp_bpa_setup_pods() {
 		new hwp_bpa_pods_setup();
 	}
 }
+
+include( HWP_BPA_PATH.'includes/functions.php' );
