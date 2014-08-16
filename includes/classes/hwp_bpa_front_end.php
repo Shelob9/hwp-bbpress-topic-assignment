@@ -1,8 +1,8 @@
 <?php
 /**
- * @TODO What this does.
+ * Front end output of this plugin
  *
- * @package   @TODO
+ * @package   @hwp_bpp
  * @author    Josh Pollock <Josh@JoshPress.net>
  * @license   GPL-2.0+
  * @link      
@@ -15,12 +15,19 @@ class hwp_bpa_front_end {
 		add_filter( 'hwp_bpp_fields_to_output', array( $this, 'new_topic' ) );
 		add_filter( 'hwp_bbp_show_fields_extra', array( $this, 'assign_form' ) );
 		add_filter( 'pods_form_pre_field', array( $this, 'assign_role' ) );
+		add_filter( 'the_title', array( $this, 'title' ), 1, 25 );
 	}
-	/**
-	 * Output the fields to right user levels.
-	 * Filter for those user levels (put elsewhere and return here?
-	 * What to hook to?
-	 */
+
+
+	function title( $title ) {
+		global $post;
+		if ( ! is_admin() && is_object( $post ) && $post->post_type == 'topic' && hwp_bpa_is_topic_resolved( $post->ID ) ) {
+			$title = '<span class="hwp-bpa-resolved">[Resolved]</span> '.$title;
+		}
+
+		return $title;
+	}
+
 
 	function new_topic( $fields ) {
 		if ( ! $this->show() ) {
